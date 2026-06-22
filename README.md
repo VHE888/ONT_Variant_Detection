@@ -76,10 +76,16 @@ The workflow supports **real-time analysis**. As BAM files are generated during 
 ### Common Alternative Splicing Events
 
 - Exon skipping
-- Intron retention
+- Mutually exclusive exons
 - Alternative 5' splice sites
 - Alternative 3' splice sites
-- Mutually exclusive exons
+- Intron retention
+- Alternative first exon
+- Alternative last intron
+
+<p align="center">
+  <img src="docs/Alternative_Splicing.jpeg" width="800">
+</p>
 
 ### Output Files
 
