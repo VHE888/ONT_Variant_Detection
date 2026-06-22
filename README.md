@@ -1,10 +1,11 @@
-## Human Whole Genome Variation Detection (Oxford Nanopore)
+## Variant Detection (Oxford Nanopore)
 
 ## Platform
 
 **Oxford Nanopore PromethION P2 Solo**
 
-- Used for human whole genome sequencing (WGS)
+- Full-length transcript and isoform analysis
+- Human whole genome sequencing (WGS)
 - No onboard computing functionality
 
 ---
@@ -23,7 +24,7 @@ Settings:
 - Basecalling: ON
 - Modified Bases Detection: ON (for epigenetic information)
 
-### Input Data
+### Output Data
 
 Generated files:
 
@@ -37,6 +38,14 @@ Generated files:
 
 ### Workflow
 
+**EPI2ME: wf-transcriptomes**
+
+Required inputs:
+
+- Reference genome (GRCh38, FASTA)
+- Gene annotation (GTF)
+- FASTQ or BAM file
+
 **EPI2ME: wf-human-variation**
 
 Required inputs:
@@ -48,6 +57,15 @@ The workflow supports **real-time analysis**. As BAM files are generated during 
 
 ### Analysis Options
 
+- Gene expression quantification
+- Transcript expression quantification
+- Novel transcript discovery
+- Isoform detection
+- Alternative splicing analysis
+- Fusion transcript detection (if present)
+
+---
+
 - SNVs (Single Nucleotide Variants)
 - SVs (Structural Variants)
 - STRs (Short Tandem Repeats / Repeat Expansions)
@@ -55,10 +73,21 @@ The workflow supports **real-time analysis**. As BAM files are generated during 
 - Methylation / Epigenetic Analysis
 - Phasing (Haplotype Phasing)
 
+### Common Alternative Splicing Events
+
+- Exon skipping
+- Intron retention
+- Alternative 5' splice sites
+- Alternative 3' splice sites
+- Mutually exclusive exons
+
 ### Output Files
 
 - HTML report
 - CRAM
+- Transcript quantification tables
+- Gene quantification tables
+- Novel transcript annotations
 - bedMethyl
 - VCF
 
@@ -79,6 +108,9 @@ Metrics include:
 - Read N50
 - Mean coverage
 - Mapping rate
+- Gene counts
+- Transcript counts
+- Novel isoforms detected
 
 ### Variant Reports
 
@@ -100,3 +132,11 @@ Files used for visualization:
 - `.cram`
 - `.bw`
 - `.vcf`
+- Transcript annotations
+
+Typical use cases:
+
+- Validate splice junctions
+- Inspect exon usage
+- Visualize novel transcript isoforms
+- Compare transcript structures between samples
